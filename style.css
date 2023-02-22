@@ -1,4 +1,4 @@
-
+@import url('https://fonts.googleapis.com/css2?family=Gentium+Book+Plus&display=swap');
 
 html {
   box-sizing: border-box;
@@ -10,7 +10,7 @@ body {
   overflow-y: hidden;
   display: flex;
   align-items: center;
-
+  font-family: 'Gentium Book Plus', serif;
 }
 
 /* Video Background */
@@ -18,6 +18,8 @@ body {
   position: fixed;
   right: 0;
   bottom: 0;
+  width: 100vw;
+  height: auto;
 
 }
 
@@ -32,7 +34,9 @@ video {
   position: fixed;
   left: 0;
   top: 0;
-
+  height: 100vh;
+  width: 100vw;
+  background-color: rgba(255, 255, 255 , .35);
 }
 
 /* Container */
@@ -46,6 +50,7 @@ video {
   z-index: 2;
   display: flex;
   justify-content: center;
+  background-color: rgba(255, 255, 255 , .85);
 
 }
 
@@ -79,7 +84,7 @@ input {
   border-radius: 20px;
   background: #fff;
   outline: none;
-
+  font-family: 'Gentium Book Plus', serif;
 }
 
 /* Button */
@@ -90,10 +95,14 @@ button {
   margin-top: 15px;
   border: none;
   text-transform: uppercase;
-  background: #006959;
+  background: #7680ed;
   color: white;
   cursor: pointer;
   outline: none;
+}
+
+button:hover {
+  filter: brightness(110%);
 }
 
 
@@ -104,7 +113,7 @@ ul {
 }
 
 li {
-
+  display: inline-block;
   font-size: 30px;
   list-style-type: none;
   padding: 10px;
@@ -123,20 +132,46 @@ li span {
   top: 60px;
 }
 
+.complete-title {
+  animation: complete 4s infinite;
+}
+
+@keyframes complete {
+  0% {
+    color: rgb(208, 45, 45);
+  }
+  25% {
+    color: rgb(228, 144, 26);
+  }
+  50% {
+    color: rgb(44, 207, 65);
+    transform: scale(1.5);
+  }
+  75% {
+    color: rgb(68, 106, 220);
+  }
+  100% {
+    color: rgb(232, 52, 223);
+  }
+}
+
 
 /* Media Query: Large Smartphone (Vertical) */
 @media screen and (max-width: 600px) {
   .video-background {
-
+    height: 100vh;
+    width: 100vw;
   }
   
   video {
-
+    object-fit: cover;
+    
     margin-top: -1px;
   }
 
   .container {
-
+    min-width: unset;
+    width: 95vw;
     min-height: 245px;
     padding: 20px;
     margin: 10px;
